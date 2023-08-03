@@ -9,7 +9,7 @@ function getComputerChoice() {
     }
 }
 
-function round(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("Enter your weapon: ");
     playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
@@ -34,4 +34,12 @@ function round(playerSelection, computerSelection) {
 
 let playerSelection;
 const computerSelection = getComputerChoice();
-console.log(round(playerSelection, computerSelection));
+
+function game() {
+    for (i = 0; i<5; i++) {
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        }
+}
+
+console.log(game());
