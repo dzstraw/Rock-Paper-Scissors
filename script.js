@@ -18,9 +18,15 @@ container.appendChild(rock);
 container.appendChild(paper);
 container.appendChild(scissors);
 
+
 let result = document.createElement("div");
 result.textContent = "result";
 document.body.appendChild(result);
+
+let playerScore = 0;
+let computerScore = 0;
+
+
 
 rock.addEventListener('click', () => {
     playRound("rock", computerSelection);
@@ -34,6 +40,13 @@ scissors.addEventListener('click', () => {
     playRound("scissors", computerSelection);
 });
 
+let playerScoreDisplay = document.createElement("div");
+playerScoreDisplay.textContent = "Your score: " + playerScore;
+document.body.appendChild(playerScoreDisplay);
+
+let computerScoreDisplay = document.createElement("div");
+computerScoreDisplay.textContent = "Your score: " + computerScore;
+document.body.appendChild(computerScoreDisplay);
 
 function getComputerChoice() {
     choice = (Math.floor(Math.random()*3))+1;
@@ -48,8 +61,6 @@ function getComputerChoice() {
 
 const computerSelection = getComputerChoice();
 
-let playerScore = 0;
-let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
