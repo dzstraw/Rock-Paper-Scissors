@@ -56,6 +56,11 @@ let result = document.createElement("div");
 result.textContent = "result";
 document.body.appendChild(result);
 
+const btn = document.querySelector(".btn");
+btn.addEventListener('click', () => {
+    playerSelection = btn.textContent;
+})
+
 
 
 
