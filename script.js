@@ -37,12 +37,15 @@ const computerSelection = getComputerChoice();
 const container = document.querySelector(".container");
 
 const rock = document.createElement("button");
+rock.classList.add("btn");
 rock.textContent = "rock";
 
 const paper = document.createElement("button");
+paper.classList.add("btn");
 paper.textContent = "paper";
 
 const scissors = document.createElement("button");
+scissors.classList.add("btn");
 scissors.textContent = "scissors";
 
 container.appendChild(rock);
