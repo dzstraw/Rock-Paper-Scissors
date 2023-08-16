@@ -49,6 +49,10 @@ container.appendChild(rock);
 container.appendChild(paper);
 container.appendChild(scissors);
 
+let result = document.createElement("div");
+result.textContent = "result";
+document.body.appendChild(result);
+
 
 
 
