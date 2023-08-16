@@ -10,8 +10,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Enter your weapon: ");
-    playerSelection.toLowerCase();
+    playerSelection = btn.value;
     computerSelection = getComputerChoice();
     if (playerSelection==computerSelection) {
         return("It's a tie!");
@@ -35,6 +34,24 @@ function playRound(playerSelection, computerSelection) {
 let playerSelection;
 const computerSelection = getComputerChoice();
 
+const container = document.querySelector(".container");
+
+const rock = document.createElement("button");
+rock.textContent = "rock";
+
+const paper = document.createElement("button");
+paper.textContent = "paper";
+
+const scissors = document.createElement("button");
+scissors.textContent = "scissors";
+
+container.appendChild(rock);
+container.appendChild(paper);
+container.appendChild(scissors);
 
 
-console.log(game());
+
+
+
+
+
