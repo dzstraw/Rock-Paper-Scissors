@@ -22,9 +22,16 @@ let result = document.createElement("div");
 result.textContent = "result";
 document.body.appendChild(result);
 
-const btn = document.querySelectorAll(".btn");
-btn.addEventListener('click', () => {
-    playerSelection = btn.textContent;
+rock.addEventListener('click', () => {
+    playRound("rock", computerSelection);
+});
+
+paper.addEventListener('click', () => {
+    playRound("paper", computerSelection);
+});
+
+scissors.addEventListener('click', () => {
+    playRound("scissors", computerSelection);
 });
 
 
@@ -41,22 +48,31 @@ function getComputerChoice() {
 
 const computerSelection = getComputerChoice();
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     if (playerSelection==computerSelection) {
         result.textContent = "It's a tie!";
     } else if (playerSelection=="rock" && computerSelection=="scissors") {
         result.textContent = "You win! Rock beats scissors.";
+        playerScore++;
     } else if (playerSelection=="rock" && computerSelection=="paper") {
         result.textContent = "You lose! Paper beats rock.";
+        computerScore++;
     } else if (playerSelection=="paper" && computerSelection=="scissors") {
         result.textContent = "You lose! Scissors beat paper.";
+        computerScore++;
     } else if (playerSelection=="paper" && computerSelection=="rock") {
         result.textContent = "You win! Paper beats rock.";
+        playerScore++;
     } else if (playerSelection=="scissors" && computerSelection=="paper") {
         result.textContent = "You win! Scissors beats paper.";
+        playerScore++;
     } else if (playerSelection=="scissors" && computerSelection=="rock") {
         result.textContent = "You lose! Rock beats scissors.";
+        computerScore++;
     } else {
         result.textContent = "Please enter a valid weapon (rock, paper, scissors).";
     }
