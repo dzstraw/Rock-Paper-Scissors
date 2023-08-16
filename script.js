@@ -13,21 +13,21 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = btn.value;
     computerSelection = getComputerChoice();
     if (playerSelection==computerSelection) {
-        return("It's a tie!");
+        result.textContent = "It's a tie!";
     } else if (playerSelection=="rock" && computerSelection=="scissors") {
-        return("You win! Rock beats scissors.");
+        result.textContent = "You win! Rock beats scissors.";
     } else if (playerSelection=="rock" && computerSelection=="paper") {
-        return("You lose! Paper beats rock.")
+        result.textContent = "You lose! Paper beats rock.";
     } else if (playerSelection=="paper" && computerSelection=="scissors") {
-        return("You lose! Scissors beat paper.")
+        result.textContent = "You lose! Scissors beat paper.";
     } else if (playerSelection=="paper" && computerSelection=="rock") {
-        return("You win! Paper beats rock.")
+        result.textContent = "You win! Paper beats rock.";
     } else if (playerSelection=="scissors" && computerSelection=="paper") {
-        return("You win! Scissors beats paper.")
+        result.textContent = "You win! Scissors beats paper.";
     } else if (playerSelection=="scissors" && computerSelection=="rock") {
-        return("You lose! Rock beats scissors.")
+        result.textContent = "You lose! Rock beats scissors.";
     } else {
-        return("Please enter a valid weapon (rock, paper, scissors).")
+        result.textContent = "Please enter a valid weapon (rock, paper, scissors).";
     }
 }
 
