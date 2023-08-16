@@ -26,8 +26,18 @@ document.body.appendChild(result);
 let playerScore = 0;
 let computerScore = 0;
 
+let playerScoreDisplay = document.createElement("div");
+playerScoreDisplay.textContent = "Your score: " + playerScore;
+document.body.appendChild(playerScoreDisplay);
 
+let computerScoreDisplay = document.createElement("div");
+computerScoreDisplay.textContent = "Computer score: " + computerScore;
+document.body.appendChild(computerScoreDisplay);
 
+let winnerDisplay = document.createElement("STRONG");
+document.body.appendChildd(winnerDisplay);
+
+// When a button is clicked, the round is played according to the button //
 rock.addEventListener('click', () => {
     playRound("rock", computerSelection);
 });
@@ -40,14 +50,8 @@ scissors.addEventListener('click', () => {
     playRound("scissors", computerSelection);
 });
 
-let playerScoreDisplay = document.createElement("div");
-playerScoreDisplay.textContent = "Your score: " + playerScore;
-document.body.appendChild(playerScoreDisplay);
 
-let computerScoreDisplay = document.createElement("div");
-computerScoreDisplay.textContent = "Your score: " + computerScore;
-document.body.appendChild(computerScoreDisplay);
-
+// returns a random number 1-3 that will correspond to one of the three choices (rock, paper, scissors)//
 function getComputerChoice() {
     choice = (Math.floor(Math.random()*3))+1;
     if (choice==1) {
@@ -69,21 +73,27 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection=="rock" && computerSelection=="scissors") {
         result.textContent = "You win! Rock beats scissors.";
         playerScore++;
+        playerScoreDisplay.textContent = "Your score: " + playerScore;
     } else if (playerSelection=="rock" && computerSelection=="paper") {
         result.textContent = "You lose! Paper beats rock.";
         computerScore++;
+        computerScoreDisplay.textContent = "Computer score: " + computerScore;
     } else if (playerSelection=="paper" && computerSelection=="scissors") {
         result.textContent = "You lose! Scissors beat paper.";
         computerScore++;
+        computerScoreDisplay.textContent = "Computer score: " + computerScore;
     } else if (playerSelection=="paper" && computerSelection=="rock") {
         result.textContent = "You win! Paper beats rock.";
         playerScore++;
+        playerScoreDisplay.textContent = "Your score: " + playerScore;
     } else if (playerSelection=="scissors" && computerSelection=="paper") {
         result.textContent = "You win! Scissors beats paper.";
         playerScore++;
+        playerScoreDisplay.textContent = "Your score: " + playerScore;
     } else if (playerSelection=="scissors" && computerSelection=="rock") {
         result.textContent = "You lose! Rock beats scissors.";
         computerScore++;
+        computerScoreDisplay.textContent = "Computer score: " + computerScore;
     } else {
         result.textContent = "Please enter a valid weapon (rock, paper, scissors).";
     }
