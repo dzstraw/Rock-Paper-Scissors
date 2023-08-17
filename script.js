@@ -35,23 +35,47 @@ computerScoreDisplay.textContent = "Computer score: " + computerScore;
 document.body.appendChild(computerScoreDisplay);
 
 let winnerDisplay = document.createElement("STRONG");
-document.body.appendChildd(winnerDisplay);
+winnerDisplay.textContent = "";
+document.body.appendChild(winnerDisplay);
+
 
 // When a button is clicked, the round is played according to the button //
 rock.addEventListener('click', () => {
     playRound("rock", computerSelection);
+    if (playerScore==5) {
+        winnerDisplay.textContent = "You win! Refresh the page to play again.";
+    }
+    if (computerScore==5) {
+        winnerDisplay.textContent = "You lost... Refresh the page to try again.";
+    }
+
 });
 
 paper.addEventListener('click', () => {
     playRound("paper", computerSelection);
+    if (playerScore==5) {
+        winnerDisplay.textContent = "You win! Refresh the page to play again.";
+    }
+    if (computerScore==5) {
+        winnerDisplay.textContent = "You lost... Refresh the page to try again.";
+    }
 });
 
 scissors.addEventListener('click', () => {
     playRound("scissors", computerSelection);
+    if (playerScore==5) {
+        winnerDisplay.textContent = "You win! Refresh the page to play again.";
+    }
+    if (computerScore==5) {
+        winnerDisplay.textContent = "You lost... Refresh the page to try again.";
+    }
 });
 
 
-// returns a random number 1-3 that will correspond to one of the three choices (rock, paper, scissors)//
+
+
+
+
 function getComputerChoice() {
     choice = (Math.floor(Math.random()*3))+1;
     if (choice==1) {
@@ -98,6 +122,4 @@ function playRound(playerSelection, computerSelection) {
         result.textContent = "Please enter a valid weapon (rock, paper, scissors).";
     }
 }
-
-
 
